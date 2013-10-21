@@ -12,7 +12,6 @@ Vagrant::Config.run do |config|
 
   # Enable and configure the chef solo provisioner
   config.vm.provision :chef_solo do |chef|
-    chef.add_recipe 'apache2'
     chef.add_recipe 'apt'
     chef.add_recipe 'curl'
     chef.add_recipe 'htop'
@@ -22,7 +21,7 @@ Vagrant::Config.run do |config|
     chef.add_recipe 'rbenv::vagrant'
     chef.add_recipe 'rbenv::system'
     chef.add_recipe 'rbenv-setup::set-version'
-    
+
 
     chef.json = {
       :rbenv => {
@@ -85,7 +84,7 @@ Vagrant::Config.run do |config|
   # end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
-  # path, and data_bags path (all relative to this Vagrantfile), and adding 
+  # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
   # config.vm.provision :chef_solo do |chef|
